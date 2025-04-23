@@ -3,7 +3,7 @@
  * @returns {number} the length of the array
  */
 function getLength(numbers) {
-  // TODO
+  return numbers.length;
 }
 
 /**
@@ -11,7 +11,16 @@ function getLength(numbers) {
  * @returns {number} the sum of the numbers
  */
 function getSum(numbers) {
-  // TODO
+  var sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (
+      typeof numbers[i] === "number" &&
+      !Number.isNaN(numbers[i] && Number.isFinite(numbers[i]))
+    ) {
+      sum += numbers[i];
+    }
+  }
+  return sum;
 }
 
 /**
@@ -19,7 +28,9 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
-  // TODO
+  const total = getSum(numbers);
+  const numItems = getLength(numbers);
+  return total / numItems;
 }
 
 /**
@@ -27,7 +38,18 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
-  // TODO
+  var minimum = numbers[0];
+  for (let i = 0; i < numbers.length; i++) {
+    if (
+      typeof numbers[i] === "number" &&
+      !Number.isNaN(numbers[i] && Number.isFinite(numbers[i]))
+    ) {
+      if (minimum > numbers[i]) {
+        minimum = numbers[i];
+      }
+    }
+  }
+  return minimum;
 }
 
 /**
@@ -35,7 +57,18 @@ function getMin(numbers) {
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
-  // TODO
+  var maximum = numbers[0];
+  for (let i = 0; i < numbers.length; i++) {
+    if (
+      typeof numbers[i] === "number" &&
+      !Number.isNaN(numbers[i] && Number.isFinite(numbers[i]))
+    ) {
+      if (maximum < numbers[i]) {
+        maximum = numbers[i];
+      }
+    }
+  }
+  return maximum;
 }
 
 /**
@@ -43,7 +76,7 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  // TODO
+  return getMin(numbers) + " - " + getMax(numbers);
 }
 
 /**
@@ -51,7 +84,18 @@ function getRange(numbers) {
  * @returns {number[]} the even numbers in the array
  */
 function getEvens(numbers) {
-  // TODO
+  var evenNumbers = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (
+      typeof numbers[i] === "number" &&
+      !Number.isNaN(numbers[i] && Number.isFinite(numbers[i]))
+    ) {
+      if (numbers[i] % 2 === 0) {
+        evenNumbers.push(numbers[i]);
+      }
+    }
+  }
+  return evenNumbers;
 }
 
 /**
@@ -59,7 +103,18 @@ function getEvens(numbers) {
  * @returns {number[]} the odd numbers in the array
  */
 function getOdds(numbers) {
-  // TODO
+  var oddNumbers = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (
+      typeof numbers[i] === "number" &&
+      !Number.isNaN(numbers[i] && Number.isFinite(numbers[i]))
+    ) {
+      if (numbers[i] % 2 !== 0) {
+        oddNumbers.push(numbers[i]);
+      }
+    }
+  }
+  return oddNumbers;
 }
 
 // === READ BUT DO NOT EDIT THE CODE BELOW ===
